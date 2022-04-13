@@ -1,0 +1,65 @@
+[class*="navbar"] {
+    padding: 1px;
+}
+
+.navbar-toggler {
+    background-color: rgba(230, 159, 159, 0.682);
+}
+
+.nav-item > a:hover {
+    color: white;
+}
+
+h3 {
+    color: darkcyan;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.accordion-item {
+    background-color: grey;
+}
+
+/*.accordion {
+    width: 75%;
+    margin: auto;
+}*/
+
+.accordion-button {
+    background-color: rgb(90, 173, 200);
+}
+
+.accordion-collapse {
+    background-color: rgba(230, 159, 159, 0.682);
+}
+
+.container {
+    background-color: lightgray;
+    padding-bottom: 10px;
+}
+
+.container-fluid {
+    background-color: lightblue;
+    padding: 0;
+}
+
+/*.carousel {
+    width: 80%;
+    margin: auto;
+}*/
+
+.carousel-item {
+    max-height: 250px;
+    object-fit: cover;
+}
+
+#container-footer {
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid white;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+}
