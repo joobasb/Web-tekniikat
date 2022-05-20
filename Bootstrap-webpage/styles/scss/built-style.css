@@ -1,65 +1,174 @@
-[class*=navbar] {
-  padding: 1px;
+/*Color themes
+main text color: #283639 
+main-color 1 light: #BFCBD6
+main-color 1 dark: #637A8F
+main-color 2 light: #D5BFBE
+main-color 2 dark: #8C6E6C
+additional-color: #D3D6A9
+*/
+@import url("https://fonts.googleapis.com/css2?family=Short+Stack&display=swap");
+.navbar {
+  z-index: 5;
+  padding: 0;
 }
-
-.navbar-toggler {
-  background-color: rgba(230, 159, 159, 0.682);
+.navbar .navbar-expand-lg {
+  max-height: 100px;
+  opacity: 0;
 }
-
-.nav-item a:hover {
+.navbar .navbar-toggler, .navbar .navbar-toggler collapsed {
+  right: 1px;
+  top: 2px;
+  border-color: #637A8F;
+}
+.navbar .navbar-toggler:focus {
+  box-shadow: none;
+  background-color: #637A8F;
+}
+.navbar .navbar-brand {
+  padding: 0;
+  font-weight: bold;
+  color: white;
+  font-size: 40px;
+  position: relative;
+}
+.navbar .container-fluid {
+  background-color: #637A8F;
+}
+.navbar .navbar-light {
   color: white;
 }
-
-h3 {
-  color: darkcyan;
+.navbar .nav-item .nav-link {
+  color: #D5BFBE;
 }
 
 body {
-  background-color: lightblue;
+  background: #637A8F;
+  font-family: "Open Sans", sans-serif;
+  min-height: 1000px;
+}
+body h1, body h2, body h3 {
+  color: white;
+  font-weight: bold;
+}
+body p {
+  color: #283639;
 }
 
-.accordion-item {
-  background-color: grey;
+header #omakuva {
+  display: block;
+  text-align: center;
 }
 
-/*.accordion {
-    width: 75%;
-    margin: auto;
-}*/
-.accordion-button {
-  background-color: rgb(90, 173, 200);
+main {
+  position: relative;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  min-height: 800px;
+}
+main h1 {
+  padding: 10px;
+  margin: auto;
+  display: flex;
+}
+main h1:hover {
+  color: white;
+}
+main .container {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0;
+}
+main .carousel-container .row {
+  padding: 40px;
+}
+main .carousel-container .carouselsize {
+  width: 100%;
+  display: inline-block;
+}
+main .text-container {
+  margin-top: 20px;
+  padding: 10px;
+  margin: auto;
+  width: 90%;
+  flex: auto;
+}
+main #spotifylogo, main #linksimg {
+  margin-left: 5%;
+  padding: 10px;
+  max-width: 210px;
+  -webkit-filter: invert(100%) !important;
+}
+main .playlist-container {
+  margin-top: 20px;
+  margin: auto;
+  width: 80%;
+  flex: auto;
 }
 
-.accordion-collapse {
-  background-color: rgba(230, 159, 159, 0.682);
+.accordion {
+  margin: auto;
+}
+.accordion .accordion-item {
+  background-color: #637A8F;
+  border: none;
+}
+.accordion .accordion-button {
+  background-color: #637A8F;
+  font-weight: bold;
+  font-size: 0.6em;
+  color: #BFCBD6;
+}
+.accordion .accordion-button:focus {
+  border-color: none;
+  box-shadow: none;
+}
+.accordion .accordion-collapse {
+  background-color: #637A8F;
 }
 
-.container {
-  background-color: lightgray;
-  padding-bottom: 10px;
+#accordionExample {
+  width: 100%;
 }
 
-.container-fluid {
-  background-color: lightblue;
+.carousel {
+  width: 100%;
+  height: 250px;
+}
+.carousel .carousel-item {
+  max-height: 250px;
+  width: 100%;
   padding: 0;
 }
 
-/*.carousel {
-    width: 80%;
-    margin: auto;
-}*/
-.carousel-item {
-  max-height: 250px;
-  object-fit: cover;
+.aboutmestyle {
+  background-color: #BFCBD6;
+  border: 1px solid white;
 }
 
 #container-footer {
-  position: fixed;
+  background-color: #8C6E6C;
+  position: relative;
   bottom: 0;
-  border-top: 1px solid white;
+  max-height: 200px;
   width: 100%;
   padding: 10px;
   text-align: center;
+}
+#container-footer img:hover {
+  -webkit-filter: invert(100%) !important;
+}
+
+@media only screen and (max-width: 991px) {
+  main .carousel-container .row {
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 700px) {
+  header {
+    visibility: hidden;
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=built-style.css.map */

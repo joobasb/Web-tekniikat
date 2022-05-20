@@ -1,0 +1,21 @@
+.strong {
+    background-color: red;
+}
+
+.special {
+    font-size: 3em;
+    display: inline-block;
+    background-color: burlywood;
+}
+
+.textcolor {
+    color: brown;
+}
+
+.textback {
+    background-color: burlywood;
+}
+
+.invalid {
+    background-color: red;
+}

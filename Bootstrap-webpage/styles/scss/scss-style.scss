@@ -1,65 +1,211 @@
-[class*="navbar"] {
-    padding: 1px;
-}
+/*Color themes
+main text color: #283639 
+main-color 1 light: #BFCBD6
+main-color 1 dark: #637A8F
+main-color 2 light: #D5BFBE
+main-color 2 dark: #8C6E6C
+additional-color: #D3D6A9
+*/
 
-.navbar-toggler {
-    background-color: rgba(230, 159, 159, 0.682);
-}
+//THEMES
 
-.nav-item a:hover {
-    color: white;
-}
+@mixin bodytheme ($theme: #637A8F) {
+    background: $theme;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 1000px;
+    h1, h2, h3 {
+        color: white;
+        font-weight: bold;
+    } 
+    p   {
+        color: #283639;
+        }
+    }
 
-h3 {
-    color: darkcyan;
-}
-
-body {
-    background-color: lightblue;
-}
-
-.accordion-item {
-    background-color: grey;
-}
-
-/*.accordion {
-    width: 75%;
-    margin: auto;
-}*/
-
-.accordion-button {
-    background-color: rgb(90, 173, 200);
-}
-
-.accordion-collapse {
-    background-color: rgba(230, 159, 159, 0.682);
-}
-
-.container {
-    background-color: lightgray;
-    padding-bottom: 10px;
-}
-
-.container-fluid {
-    background-color: lightblue;
-    padding: 0;
-}
-
-/*.carousel {
-    width: 80%;
-    margin: auto;
-}*/
-
-.carousel-item {
-    max-height: 250px;
-    object-fit: cover;
-}
-
-#container-footer {
-    position: fixed;
+@mixin footertheme ($theme: #8C6E6C){
+    background-color: #8C6E6C;
+    position: relative;
     bottom: 0;
-    border-top: 1px solid white;
+    max-height: 200px;
     width: 100%;
     padding: 10px;
     text-align: center;
+    img:hover {
+        -webkit-filter: invert(100%) !important;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+.navbar {
+    z-index: 5;
+    padding: 0;
+    .navbar-expand-lg {
+        max-height: 100px;
+        opacity: 0;
+    }
+    .navbar-toggler, .navbar-toggler collapsed {
+        right: 1px;
+        top: 2px;
+        border-color: #637A8F;
+    }
+    .navbar-toggler:focus{
+        box-shadow: none;
+        background-color: #637A8F;
+
+    }
+    .navbar-brand {
+        padding: 0;
+        font-weight: bold;
+        color: white;
+        font-size: 40px;
+        position: relative;
+    }
+    .container-fluid {
+        background-color: #637A8F;
+    }
+    .navbar-light {
+        color: white;
+    }
+    .nav-item {
+        .nav-link {
+        color: #D5BFBE;
+    }
+    }
+}
+
+body {
+    @include bodytheme;
+} 
+
+
+header {
+    #omakuva {
+        display: block;
+        text-align: center;
+}
+}
+main {
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-height: 800px;
+    h1 {
+        padding: 10px;
+        margin: auto;
+        display: flex;
+    }
+    h1:hover {
+        color: white;
+    }
+    .container {
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+        }
+
+    .carousel-container {
+        .row {
+            padding: 40px;
+        }
+        .carouselsize{
+            width: 100%;
+            display: inline-block;
+        }
+        }
+    
+    
+    .text-container {
+        margin-top: 20px;
+        padding: 10px;
+        margin: auto;
+        width: 90%;
+        flex: auto;
+    }
+    #spotifylogo, #linksimg {
+        margin-left: 5%;
+        padding: 10px;
+        max-width: 210px;
+        -webkit-filter: invert(100%) !important;
+    }
+
+
+    .playlist-container {
+        margin-top: 20px;
+        margin: auto;
+        width: 80%;
+        flex: auto;
+    }
+}
+
+
+//About page bootstrap accordion
+
+.accordion {
+    margin: auto;
+    .accordion-item {
+        background-color: #637A8F;
+        border: none;
+    }
+    .accordion-button {
+        background-color:  #637A8F;
+        font-weight: bold;
+        font-size: 0.6em;
+        color:  #BFCBD6;
+    }
+    .accordion-button:focus {
+        border-color: none;
+        box-shadow: none;
+    }
+    .accordion-collapse {
+        background-color: #637A8F;
+    }
+
+}
+
+#accordionExample {
+    width: 100%;
+}
+.carousel {
+    width: 100%;
+    height: 250px;
+    .carousel-item {
+    max-height: 250px;
+    width: 100%;
+    padding: 0;
+}
+}
+
+.aboutmestyle {
+    background-color: #BFCBD6;
+    border: 1px solid white;
+}
+
+
+
+#container-footer {
+    @include footertheme;
+}
+
+
+
+//Responsivity adjustments
+
+@media only screen and (max-width: 991px){
+    main {
+    .carousel-container {
+        .row {
+            padding: 0;
+        }
+    }
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    header {
+        visibility: hidden;
+        display: none;
+    }
 }
