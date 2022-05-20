@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*Color themes
 main text color: #283639 
 main-color 1 light: #BFCBD6
@@ -30,6 +31,14 @@ additional-color: #D3D6A9
   color: white;
   font-size: 40px;
   position: relative;
+  padding-right: 0;
+}
+.navbar .navbar-brand:hover span {
+  display: none;
+}
+.navbar .navbar-brand:hover:before {
+  font-size: 34px;
+  content: "h o m e";
 }
 .navbar .container-fluid {
   background-color: #637A8F;
@@ -37,8 +46,34 @@ additional-color: #D3D6A9
 .navbar .navbar-light {
   color: white;
 }
+.navbar .nav-item {
+  width: 100px;
+  text-align: center;
+}
 .navbar .nav-item .nav-link {
   color: #D5BFBE;
+  padding: 0;
+}
+.navbar .nav-item:nth-child(1):hover span {
+  display: none;
+}
+.navbar .nav-item:nth-child(1) > a:hover:before {
+  content: "アバウト";
+  font-weight: bold;
+}
+.navbar .nav-item:nth-child(2):hover span {
+  display: none;
+}
+.navbar .nav-item:nth-child(2) > a:hover:before {
+  content: "プロジェック";
+  font-weight: bold;
+}
+.navbar .nav-item:nth-child(3):hover span {
+  display: none;
+}
+.navbar .nav-item:nth-child(3) > a:hover:before {
+  content: "リンクス";
+  font-weight: bold;
 }
 
 body {
@@ -105,6 +140,12 @@ main .playlist-container {
   width: 80%;
   flex: auto;
 }
+main .links h2 {
+  font-size: 2vw;
+}
+main .links .col-sm-12, main .links .col-md-12 {
+  padding: 20px;
+}
 
 .accordion {
   margin: auto;
@@ -144,13 +185,19 @@ main .playlist-container {
 .aboutmestyle {
   background-color: #BFCBD6;
   border: 1px solid white;
+  padding: 10px;
+}
+
+.flipped {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 #container-footer {
   background-color: #8C6E6C;
   position: relative;
   bottom: 0;
-  max-height: 200px;
+  max-height: 180px;
   width: 100%;
   padding: 10px;
   text-align: center;
@@ -162,6 +209,16 @@ main .playlist-container {
 @media only screen and (max-width: 991px) {
   main .carousel-container .row {
     padding: 0;
+  }
+  main .links h2 {
+    font-size: 18px;
+  }
+
+  .navbar .nav-item {
+    text-align: right;
+    width: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
 }
 @media only screen and (max-width: 700px) {
