@@ -23,10 +23,10 @@ additional-color: #D3D6A9
     }
 
 @mixin footertheme ($theme: #8C6E6C){
-    background-color: #8C6E6C;
+    background-color: $theme;
     position: relative;
     bottom: 0;
-    max-height: 200px;
+    max-height: 180px;
     width: 100%;
     padding: 10px;
     text-align: center;
@@ -60,6 +60,14 @@ additional-color: #D3D6A9
         color: white;
         font-size: 40px;
         position: relative;
+        padding-right: 0;
+    }
+    .navbar-brand:hover span {
+        display:none;
+    }
+    .navbar-brand:hover:before {
+        font-size: 34px;
+        content:"h o m e";
     }
     .container-fluid {
         background-color: #637A8F;
@@ -68,10 +76,35 @@ additional-color: #D3D6A9
         color: white;
     }
     .nav-item {
+        width: 100px;
+        text-align: center;
         .nav-link {
         color: #D5BFBE;
+        padding:0;
     }
+}
+    .nav-item:nth-child(1):hover span {
+        display:none;
     }
+    .nav-item:nth-child(1) > a:hover:before{
+        content: "アバウト";
+        font-weight: bold;
+    }
+    .nav-item:nth-child(2):hover span {
+        display:none;
+    }
+    .nav-item:nth-child(2) > a:hover:before {
+        content: "プロジェック";
+        font-weight: bold;
+    }
+    .nav-item:nth-child(3):hover span {
+        display:none;
+    }
+    .nav-item:nth-child(3) >a:hover:before {
+        content: "リンクス";
+        font-weight: bold;
+    }
+
 }
 
 body {
@@ -137,8 +170,16 @@ main {
         width: 80%;
         flex: auto;
     }
-}
 
+    .links {
+        h2 {
+            font-size: 2vw;
+        }
+        .col-sm-12, .col-md-12 {
+            padding: 20px;
+    }
+    }
+}
 
 //About page bootstrap accordion
 
@@ -180,8 +221,13 @@ main {
 .aboutmestyle {
     background-color: #BFCBD6;
     border: 1px solid white;
+    padding: 10px;
 }
 
+.flipped {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
 
 
 #container-footer {
@@ -199,9 +245,21 @@ main {
             padding: 0;
         }
     }
+    .links {
+        h2 {
+            font-size: 18px;
+        }
+    }
+    }
+    .navbar {
+        .nav-item {
+            text-align: right;
+            width: auto;
+            margin-top: 5px;
+            margin-bottom: 5px;
+    }
     }
 }
-
 
 @media only screen and (max-width: 700px) {
     header {
