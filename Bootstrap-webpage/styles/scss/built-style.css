@@ -38,6 +38,7 @@ additional-color: #D3D6A9
 }
 .navbar .navbar-brand:hover:before {
   font-size: 34px;
+  padding-bottom: 5px;
   content: "h o m e";
 }
 .navbar .container-fluid {
@@ -48,6 +49,8 @@ additional-color: #D3D6A9
 }
 .navbar .nav-item {
   width: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
   text-align: center;
 }
 .navbar .nav-item .nav-link {
@@ -146,6 +149,13 @@ main .links h2 {
 main .links .col-sm-12, main .links .col-md-12 {
   padding: 20px;
 }
+main .links .projects {
+  margin-top: 20px;
+  padding: 10px;
+  margin: auto;
+  width: 90%;
+  flex: auto;
+}
 
 .accordion {
   margin: auto;
@@ -206,6 +216,13 @@ main .links .col-sm-12, main .links .col-md-12 {
   -webkit-filter: invert(100%) !important;
 }
 
+.embedwindow iframe {
+  top: 0;
+  width: 80vw;
+  height: 500px;
+  -webkit-transform: scale(0.7);
+}
+
 @media only screen and (max-width: 991px) {
   main .carousel-container .row {
     padding: 0;
@@ -224,6 +241,10 @@ main .links .col-sm-12, main .links .col-md-12 {
 @media only screen and (max-width: 700px) {
   header {
     visibility: hidden;
+    display: none;
+  }
+
+  .embedwindow iframe {
     display: none;
   }
 }
