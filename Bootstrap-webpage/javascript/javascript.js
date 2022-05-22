@@ -1,37 +1,26 @@
-//Adding style to some bootstrap columns
-let aboutStyle = document.querySelector(".aboutme");
+//bodytheme changer
+
+function changeBody () {
+    document.body.classList.toggle("bodytheme2");
+}
 
 //about me styling
+let aboutStyle = document.querySelector(".aboutme");
+
+
 function addAboutStyle () {
+    if (document.body.classList == "bodytheme2") {
+        aboutStyle.classList.add("aboutmestyle2")
+    } else {
     aboutStyle.classList.add("aboutmestyle")
+}
 }
 
 function removeAboutStyle () {
-    aboutStyle.classList.remove("aboutmestyle");;
+    aboutStyle.classList.remove("aboutmestyle");
+    aboutStyle.classList.remove("aboutmestyle2");
 }
 
 aboutStyle.addEventListener("mouseover", addAboutStyle);
 aboutStyle.addEventListener("mouseleave", removeAboutStyle);
 
-
-//Link page events
-
-
-let divs = document.querySelector(".rym");
-
-divs.addEventListener("mouseover", highLight);
-
-function highLight () {
-    divs.classList.toggle("aboutmestyle");
-}
-
-
-//random testing
-
-let pic = document.getElementById("omakuva");
-
-function flipOver () {
-    pic.classList.add("flipped")
-}
-
-pic.addEventListener("mouseover", flipOver);
