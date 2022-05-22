@@ -1,14 +1,17 @@
-/*Color themes
-main text color: #283639 
-main-color 1 light: #BFCBD6
-main-color 1 dark: #637A8F
-main-color 2 light: #D5BFBE
-main-color 2 dark: #8C6E6C
-additional-color: #D3D6A9
-*/
+//VARIABLES // main color themes
+$color-main: #637A8F;
+$color-light: #BFCBD6;
+$color-main2: #8C6E6C;
+$color-light2: #D5BFBE;
+$color-bonus: #D3D6A9;
+$text-color-main: #283639;
 
-//THEMES
 
+//Imported font
+@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
+
+
+//MIXIN THEMES
 @mixin bodytheme ($theme: #637A8F) {
     background: $theme;
     font-family: 'Open Sans', sans-serif;
@@ -18,9 +21,22 @@ additional-color: #D3D6A9
         font-weight: bold;
     } 
     p   {
-        color: #283639;
+        color: $text-color-main;
         }
     }
+
+@mixin bodytheme2 ($theme: #8C6E6C) {
+    background: $theme;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 1000px;
+    h1, h2, h3 {
+        color: white;
+        font-weight: bold;
+    }
+    p {
+        color: $text-color-main;
+    }
+}
 
 @mixin footertheme ($theme: #8C6E6C){
     background-color: $theme;
@@ -35,8 +51,11 @@ additional-color: #D3D6A9
     }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Short+Stack&display=swap');
 
+
+
+
+//Navbar adjustments and styling
 .navbar {
     z-index: 5;
     padding: 0;
@@ -47,11 +66,11 @@ additional-color: #D3D6A9
     .navbar-toggler, .navbar-toggler collapsed {
         right: 1px;
         top: 2px;
-        border-color: #637A8F;
+        border-color: $color-main;
     }
     .navbar-toggler:focus{
         box-shadow: none;
-        background-color: #637A8F;
+        background-color: $color-main;
 
     }
     .navbar-brand {
@@ -71,7 +90,7 @@ additional-color: #D3D6A9
         content:"h o m e";
     }
     .container-fluid {
-        background-color: #637A8F;
+        background-color: $color-main;
     }
     .navbar-light {
         color: white;
@@ -82,10 +101,10 @@ additional-color: #D3D6A9
         margin-right: 20px;
         text-align: center;
         .nav-link {
-        color: #D5BFBE;
-        padding:0;
+            color: $color-light2;
+            padding:0;
+        }
     }
-}
     .nav-item:nth-child(1):hover span {
         display:none;
     }
@@ -107,6 +126,13 @@ additional-color: #D3D6A9
         content: "リンクス";
         font-weight: bold;
     }
+    .nav-item:nth-child(4):hover span {
+        display:none;
+    }
+    .nav-item:nth-child(4) >a:hover:before {
+        content: "カラー";
+        font-weight: bold;
+    }
 
 }
 
@@ -115,12 +141,64 @@ body {
 } 
 
 
+//Body theme red
+.bodytheme2 {
+    background-color: $color-main2;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 1000px;
+    h1, h2, h3 {
+        color: white;
+        font-weight: bold;
+    }
+    p {
+        color: $text-color-main;
+    }
+    .container-fluid {
+        background-color: $color-main2;
+    }
+    .navbar-toggler, .navbar-toggler collapsed {
+        right: 1px;
+        top: 2px;
+        border-color: $color-main2;
+    }
+    .navbar-toggler:focus{
+        box-shadow: none;
+        background-color: $color-main2;
+
+    }
+    .accordion {
+        .accordion-item {
+            background-color: $color-main2;
+            border: none;
+        }
+        .accordion-button {
+            background-color:  $color-main2;
+            font-weight: bold;
+            font-size: 0.6em;
+            color:  $color-light;
+        }
+        .accordion-button:focus {
+            border-color: none;
+            box-shadow: none;
+        }
+        .accordion-collapse {
+            background-color: $color-main2;
+        }
+    }
+}
+
+//Header for image
 header {
     #omakuva {
         display: block;
         text-align: center;
+        img:hover {
+            -webkit-filter: invert(90%) !important;
+        }
 }
 }
+
+//"Main" element with all its page variation containers
 main {
     position: relative;
     margin: auto;
@@ -140,7 +218,8 @@ main {
         margin-top: 20px;
         padding: 0;
         }
-
+    
+    //Mainpage image carousel
     .carousel-container {
         .row {
             padding: 40px;
@@ -149,15 +228,25 @@ main {
             width: 100%;
             display: inline-block;
         }
+        .carousel {
+            width: 100%;
+            .carousel-item {
+                width: 100%;
+                padding: 0;
+                object-fit:fill;
+            }
         }
-    
-    
+        }
+
     .text-container {
         margin-top: 20px;
         padding: 10px;
         margin: auto;
         width: 90%;
         flex: auto;
+        [class*="col"]{
+            padding: 10px;
+        }
     }
 
     //links page adjustments
@@ -168,7 +257,7 @@ main {
         -webkit-filter: invert(100%) !important;
     }
 
-
+    
     .playlist-container {
         margin-top: 20px;
         margin: auto;
@@ -197,26 +286,26 @@ main {
     }
 }
 
-//About page bootstrap accordion
 
+//About page bootstrap accordion
 .accordion {
     margin: auto;
     .accordion-item {
-        background-color: #637A8F;
+        background-color: $color-main;
         border: none;
     }
     .accordion-button {
-        background-color:  #637A8F;
+        background-color:  $color-main;
         font-weight: bold;
         font-size: 0.6em;
-        color:  #BFCBD6;
+        color:  $color-light;
     }
     .accordion-button:focus {
         border-color: none;
         box-shadow: none;
     }
     .accordion-collapse {
-        background-color: #637A8F;
+        background-color: $color-main;
     }
 
 }
@@ -224,33 +313,30 @@ main {
 #accordionExample {
     width: 100%;
 }
-.carousel {
-    width: 100%;
-    height: 250px;
-    .carousel-item {
-        max-height: 250px;
-        width: 100%;
-        padding: 0;
-    }
-}
 
+
+
+
+//javascript function styles
 .aboutmestyle {
-    background-color: #BFCBD6;
+    background-color: $color-light;
     border: 1px solid white;
     padding: 10px;
 }
 
-.flipped {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
+.aboutmestyle2 {
+    background-color: $color-light2;
+    border: 1px solid white;
+    padding: 10px;
 }
 
 
+//Footer element
 #container-footer {
     @include footertheme;
 }
 
-//projects page styling
+//projects page adjustments
 
 .embedwindow{
     iframe {
@@ -259,6 +345,13 @@ main {
         height: 500px;
         -webkit-transform:scale(0.7);
 
+    }
+}
+
+#restapiviewer {
+    text-align: left;
+    img {
+        max-width: 400px;
     }
 }
 
@@ -297,6 +390,12 @@ main {
         iframe {
             display: none;
     
+        }
+    }
+    #restapiviewer {
+        text-align: center;
+        img {
+            max-width: 80vw;
         }
     }
 }
