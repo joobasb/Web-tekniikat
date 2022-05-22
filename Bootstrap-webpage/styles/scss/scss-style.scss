@@ -339,11 +339,12 @@ main {
 //projects page adjustments
 
 .embedwindow{
+    text-align: center;
     iframe {
         top: 0;
-        width: 80vw;
+        width: 60vw;
         height: 500px;
-        -webkit-transform:scale(0.7);
+        -webkit-transform:scale(0.95);
 
     }
 }
@@ -377,6 +378,13 @@ main {
             margin-top: 5px;
             margin-bottom: 5px;
     }
+    }
+    .embedwindow{
+        right: 50;
+        iframe {
+            text-align: left;
+    
+        }
     }
     
 }
